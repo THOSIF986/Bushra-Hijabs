@@ -10,6 +10,63 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="min-h-screen bg-white">
+      {/* Brand Title */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8 text-center bg-white">
+        <h1 className="text-3xl lg:text-4xl tracking-wide text-gray-900">
+          Bushra Hijabs, Indian Premium Hijab Brand
+        </h1>
+      </section>
+
+      {/* Hero Section - Elegance in Every Thread */}
+      <section className="relative bg-gradient-to-r from-gray-50 to-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  Elegance in Every
+                </h2>
+                <h2 className="text-5xl lg:text-6xl font-bold text-pink-600 leading-tight">
+                  Thread
+                </h2>
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
+                Discover our curated collection of premium hijabs, crafted with the finest fabrics and attention to detail. From silk to chiffon, find your perfect style.
+              </p>
+
+              <div className="flex gap-4 pt-4">
+                <Button
+                  onClick={() => onNavigate('shop')}
+                  className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 rounded-md text-base"
+                >
+                  Shop Collection
+                </Button>
+                <Button
+                  onClick={() => onNavigate('custom-design')}
+                  variant="outline"
+                  className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-6 rounded-md text-base"
+                >
+                  Design Your Own
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg shadow-2xl">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1643080337254-92836bbf86f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBwaW5rfGVufDF8fHx8MTc2MDg4NDc3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  alt="Elegant woman in pink hijab"
+                  className="w-full h-[500px] lg:h-[600px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section with 4 Images */}
       <section className="relative">
         <div className="grid grid-cols-2 lg:grid-cols-4 h-[70vh] lg:h-[80vh]">
