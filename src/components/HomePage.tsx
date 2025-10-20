@@ -17,85 +17,50 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </h1>
       </section>
 
-      {/* Hero Section with 4 Images */}
-      <section className="relative">
-        <div className="grid grid-cols-2 lg:grid-cols-4 h-[70vh] lg:h-[80vh]">
-          {/* Image 1 - Pink */}
-          <div className="relative overflow-hidden">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1643080337254-92836bbf86f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBwaW5rfGVufDF8fHx8MTc2MDg4NDc3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Pink Hijab Collection"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-
-          {/* Image 2 - Navy */}
-          <div className="relative overflow-hidden">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1668959901722-627e2277f28d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBuYXZ5JTIwYmx1ZXxlbnwxfHx8fDE3NjA4ODQ3NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Navy Hijab Collection"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-
-          {/* Image 3 - Brown */}
-          <div className="relative overflow-hidden">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1609750955252-5eb0721ea3f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBicm93bnxlbnwxfHx8fDE3NjA4ODQ3NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Brown Hijab Collection"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-
-          {/* Image 4 - Green */}
-          <div className="relative overflow-hidden">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1613611927458-3ddd4b0afdb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBncmVlbnxlbnwxfHx8fDE3NjA4ODQ3NzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Green Hijab Collection"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </div>
+      {/* Hero Section - Elegance in Every Thread */}
+      <section className="relative h-[70vh] lg:h-[80vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1643080337254-92836bbf86f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBwaW5rfGVufDF8fHx8MTc2MDg4NDc3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="Elegant woman in beige hijab"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
         </div>
 
-        {/* Center Overlay Card */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="bg-white rounded-lg shadow-2xl p-8 lg:p-12 max-w-md lg:max-w-lg pointer-events-auto relative">
-            {/* Small Logo/Brand in top right */}
-            <div className="absolute top-4 right-4 flex items-center gap-2">
-              <div className="flex flex-col items-end">
-                <span className="text-xs tracking-wider">LITTLE</span>
-                <span className="text-xs tracking-wider">BLACK HIJAB</span>
-              </div>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="black"/>
-              </svg>
-            </div>
-
-            {/* Main Content */}
-            <div className="space-y-6">
+        {/* Content Overlay */}
+        <div className="relative h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="max-w-2xl space-y-6">
               <div>
-                <h2 className="text-5xl lg:text-6xl tracking-tight text-gray-900">
-                  LUXE
+                <h2 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
+                  Elegance in Every
                 </h2>
-                <h2 className="text-5xl lg:text-6xl tracking-tight text-gray-900">
-                  MODAL
-                </h2>
-                <h2 className="text-5xl lg:text-6xl tracking-tight text-gray-900">
-                  HIJAB
+                <h2 className="text-5xl lg:text-7xl font-bold text-pink-600 leading-tight">
+                  Thread
                 </h2>
               </div>
 
-              <div className="flex items-center gap-2 text-sm tracking-wide text-gray-700">
-                <Play className="w-4 h-4 fill-current" />
-                <span>JUST IN, JUST RIGHT</span>
-              </div>
+              <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl">
+                Discover our curated collection of premium hijabs, crafted with the finest fabrics and attention to detail. From silk to chiffon, find your perfect style.
+              </p>
 
-              <Button
-                onClick={() => onNavigate('shop')}
-                className="bg-black hover:bg-gray-800 text-white px-8 py-6 rounded-full tracking-widest"
-              >
-                SHOP NOW
-              </Button>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Button
+                  onClick={() => onNavigate('shop')}
+                  className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 rounded-md text-base font-medium"
+                >
+                  Shop Collection
+                </Button>
+                <Button
+                  onClick={() => onNavigate('custom-design')}
+                  variant="outline"
+                  className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-6 rounded-md text-base font-medium bg-white/80"
+                >
+                  Design Your Own
+                </Button>
+              </div>
             </div>
           </div>
         </div>
