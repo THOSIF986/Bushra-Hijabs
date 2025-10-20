@@ -10,13 +10,6 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Brand Title */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 text-center bg-white">
-        <h1 className="text-3xl lg:text-4xl tracking-wide text-gray-900">
-          Bushra Hijabs, Indian Premium Hijab Brand
-        </h1>
-      </section>
-
       {/* Hero Section - Elegance in Every Thread */}
       <section className="relative h-[70vh] lg:h-[80vh] overflow-hidden">
         {/* Background Image */}
