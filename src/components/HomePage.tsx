@@ -17,55 +17,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </h1>
       </section>
 
-      {/* Hero Section - Elegance in Every Thread */}
-      <section className="relative h-[70vh] lg:h-[80vh] overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1643080337254-92836bbf86f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBwaW5rfGVufDF8fHx8MTc2MDg4NDc3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Elegant woman in pink hijab"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
-        </div>
-
-        {/* Content Overlay */}
-        <div className="relative h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="max-w-2xl space-y-6">
-              <div>
-                <h2 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                  Elegance in Every
-                </h2>
-                <h2 className="text-5xl lg:text-7xl font-bold text-pink-600 leading-tight">
-                  Thread
-                </h2>
-              </div>
-
-              <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl">
-                Discover our curated collection of premium hijabs, crafted with the finest fabrics and attention to detail. From silk to chiffon, find your perfect style.
-              </p>
-
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button
-                  onClick={() => onNavigate('shop')}
-                  className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-6 rounded-md text-base font-medium"
-                >
-                  Shop Collection
-                </Button>
-                <Button
-                  onClick={() => onNavigate('custom-design')}
-                  variant="outline"
-                  className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-6 rounded-md text-base font-medium bg-white/80"
-                >
-                  Design Your Own
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section with 4 Images */}
       <section className="relative">
         <div className="grid grid-cols-2 lg:grid-cols-4 h-[70vh] lg:h-[80vh]">
