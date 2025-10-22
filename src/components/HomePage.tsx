@@ -15,11 +15,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1643080337254-92836bbf86f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGhpamFiJTIwcG9ydHJhaXQlMjBwaW5rfGVufDF8fHx8MTc2MDg4NDc3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Elegant woman in beige hijab"
-            className="w-full h-full object-cover"
+            src="https://images.pexels.com/photos/9218626/pexels-photo-9218626.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Elegant woman in pastel beige hijab with natural lighting"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 to-transparent"></div>
         </div>
 
         {/* Content Overlay */}
