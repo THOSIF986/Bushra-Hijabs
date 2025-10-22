@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingCart, User, Heart, Menu, X, ChevronDown } from 'lucide-react';
 import { useApp } from '../lib/AppContext';
+import { supabase, Category, Subcategory } from '../lib/supabase';
 import { Button } from './ui/button';
 import {
   DropdownMenu,
@@ -19,8 +20,39 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   const { cart, user, isLoggedIn, logout, isAdmin, adminLogout } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hijabsMenuOpen, setHijabsMenuOpen] = useState(false);
+  const [categories, setCategories] = useState<(Category & { subcategories: Subcategory[] })[]>([]);
 
   const cartItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const fetchCategories = async () => {
+    const { data: categoriesData } = await supabase
+      .from('categories')
+      .select('*')
+      .order('display_order');
+
+    if (categoriesData) {
+      const categoriesWithSubs = await Promise.all(
+        categoriesData.map(async (category) => {
+          const { data: subcategories } = await supabase
+            .from('subcategories')
+            .select('*')
+            .eq('category_id', category.id)
+            .order('display_order');
+
+          return {
+            ...category,
+            subcategories: subcategories || []
+          };
+        })
+      );
+      setCategories(categoriesWithSubs);
+    }
+  };
 
   const handleLogout = () => {
     if (isAdmin) {
@@ -273,14 +305,48 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             >
               NEW ARRIVALS
             </button>
-            <div className="relative group">
+            <div
+              className="relative"
+              onMouseEnter={() => setHijabsMenuOpen(true)}
+              onMouseLeave={() => setHijabsMenuOpen(false)}
+            >
               <button
-                onClick={() => onNavigate('shop')}
                 className="text-sm text-gray-700 hover:text-gray-900 uppercase tracking-wide flex items-center gap-1"
               >
                 HIJABS
                 <ChevronDown className="w-4 h-4" />
               </button>
+
+              {hijabsMenuOpen && (
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-full pt-2 w-screen max-w-6xl">
+                  <div className="bg-white rounded-lg shadow-2xl border border-gray-200 p-8">
+                    <div className="grid grid-cols-4 gap-8">
+                      {categories.map((category) => (
+                        <div key={category.id} className="space-y-3">
+                          <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider border-b border-pink-200 pb-2">
+                            {category.name}
+                          </h3>
+                          <ul className="space-y-2">
+                            {category.subcategories.map((subcategory) => (
+                              <li key={subcategory.id}>
+                                <button
+                                  onClick={() => {
+                                    onNavigate('shop');
+                                    setHijabsMenuOpen(false);
+                                  }}
+                                  className="text-sm text-gray-600 hover:text-pink-600 transition-colors text-left w-full"
+                                >
+                                  {subcategory.name}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             <button
               onClick={() => onNavigate('shop')}
